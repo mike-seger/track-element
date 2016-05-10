@@ -3,8 +3,9 @@
 <head>
 <meta charset='UTF-8'><meta name="robots" content="noindex">
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='//api.html5media.info/1.1.8/html5media.min.js'></script>
-<link rel="stylesheet" href="style.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/mediaelement/2.21.1/mediaelement-and-player.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/mediaelement/2.21.1/mediaelementplayer.css" />
+<link rel="stylesheet" href="me2.css" />
 <style>
 .audioplayer * {
 	width: 100%;
@@ -75,31 +76,15 @@
 });
 </script>
 
-<script src="htmlmedia.js"></script>
+<script>
+//using jQuery
+$('#musicplayer').mediaelementplayer({
+enableKeyboard: true,
+audioWidth: "100%"
+});
 
-	<div class="container">
-		<div class="column add-bottom player">
-			<div id="mainwrap">
-				<div id="audiowrap">
-					<div id="audio1">
-						<audio preload="auto" id="audio1" controls="controls">
-						    <source src="007.wav">
-						    <source src="007.mp4">
-						    <track kind="chapters" label="Locations" src="007.vtt" 
-								srclang="en" default type="text/vtt">
-						</audio>
-					</div>
-					<div id="tracks">
-						<a id="btnPrev">&laquo;</a> <a id="btnNext">&raquo;</a>
-					</div>
-				</div>
-				<div id="plwrap">
-					<ul id="plList">
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+$('.mejs-chapter').hide();
+</script>
 
 </body>
 </html>
